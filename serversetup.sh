@@ -268,9 +268,10 @@ then
   echo -e $Y"[*] Configuring stunnel..."$END
 
   echo 'cert=/etc/stunnel/stunnel.pem' > /etc/stunnel/stunnel.conf
+  echo 'setuid=nobody' >> /etc/stunnel/stunnel.conf
   echo '[https]' >> /etc/stunnel/stunnel.conf
-  echo 'accept = 443' >> /etc/stunnel/stunnel.conf
-  echo 'connect = 127.0.0.1:22' >> /etc/stunnel/stunnel.conf
+  echo 'accept=443' >> /etc/stunnel/stunnel.conf
+  echo 'connect=127.0.0.1:22' >> /etc/stunnel/stunnel.conf
   check "Configuring stunnel"
 
   echo -e $Y"[*] Generating stunnel certificate..."$END
